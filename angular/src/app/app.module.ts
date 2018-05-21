@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { CorrelationService } from './data/correlation.service'
+import { CorrelationListComponent } from './correlation.list.component'
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CorrelationListComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [CorrelationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

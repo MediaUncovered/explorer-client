@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable , Output, EventEmitter} from '@angular/core';
 
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 
 import { Correlation } from './correlation';
 
@@ -21,7 +21,36 @@ export const CORRELATIONS: Correlation[] = [
 })
 export class CorrelationService {
 
+  private correlationsSource = new Subject<Correlation[]>();
+  correlations$ = this.correlationsSource.asObservable();
+
   constructor() { }
+
+  update(word: string): void {
+    var correlations: Correlation[] = [];
+    for( let correlation of CORRELATIONS) {
+      correlations.push(
+        {
+          value: -20 + Math.random() * 40,
+          label: correlation.label
+        }
+      )
+    }
+    correlations.sort(
+      (a, b) => {
+        if (a.value > b.value) {
+            return -1;
+        }
+
+        if (a.value < b.value) {
+            return 1;
+        }
+
+        return 0;
+      }
+    )
+    this.correlationsSource.next(correlations);
+  }
 
   getCorrelations(): Observable<Correlation[]> {
     return of(CORRELATIONS);

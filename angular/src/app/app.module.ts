@@ -1,18 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { ChartsModule } from 'ng2-charts';
 
-import { CorrelationService } from './data/correlation.service'
-import { CorrelationListComponent } from './correlation.list.component'
+import { CorrelationService } from './data/correlation.service';
+import { CorrelationListComponent } from './correlation.list.component';
+import { CorrelationGraphComponent } from './correlation-graph/correlation-graph.component';
+
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CorrelationListComponent
+    CorrelationListComponent,
+    CorrelationGraphComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ChartsModule
   ],
   providers: [CorrelationService],
   bootstrap: [AppComponent]

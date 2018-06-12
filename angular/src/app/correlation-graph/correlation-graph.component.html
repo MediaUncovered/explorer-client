@@ -1,4 +1,6 @@
 <div>
+  <input #wordinput />
+  <button (click)="correlationService.query(wordinput.value)">Update</button>
   <div style="display: block">
     <canvas baseChart
             [datasets]="barChartData"
@@ -9,5 +11,4 @@
             (chartHover)="chartHovered($event)"
             (chartClick)="chartClicked($event)"></canvas>
   </div>
-  <button (click)="correlationService.update('some')">Update</button>
 </div>

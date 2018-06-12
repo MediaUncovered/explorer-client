@@ -1,0 +1,18 @@
+version: '3'
+services:
+  api:
+    image: mediauncovered/explorer-server:dev
+    ports:
+      - 5000:5000
+    volumes:
+      - ./models:/flask-explorer/models
+
+  client:
+    image: mediauncovered/explorer-client:dev
+    build: .
+    ports:
+      - 4200:4200
+    volumes:
+      - ./angular/src:/var/www/angular/src
+    links:
+      - api

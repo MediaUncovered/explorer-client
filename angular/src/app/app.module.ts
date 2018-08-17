@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {ChartsModule} from 'ng2-charts';
 
 import {CorrelationService} from './data/correlation.service';
-//import {InfoService} from './info/info.service'
+import {InfoService} from './info/info.service'
 import {CorrelationGraphComponent} from './correlation-graph/correlation-graph.component';
 
 import {AppComponent} from './app.component';
@@ -30,6 +30,7 @@ import { InfoComponent } from './info/info.component';
   ],
   providers: [
     CorrelationService,
+    InfoService
   ],
   bootstrap: [AppComponent]
 })

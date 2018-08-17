@@ -4,6 +4,8 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 //import {catchError} from 'rxjs/operators';
 import { Component } from '@angular/core';
 import {API_URL} from '../env';
+
+import { InfoService } from './info.service';
 //import {Info} from './info.model';
 //import {throwError as throw} from 'rxjs';
 
@@ -18,25 +20,13 @@ export class InfoComponent{
 
 	modelName: string;
 
-	constructor(private http: HttpClient){
-
+	constructor(private infoService: InfoService) {}
+	onGet() {
+		this.infoService.getCollectionInfo()
+		.subscribe(
+			(response) => console.log(response),
+			(error) => console.log(error)
+		);
 	}
-
-	//private static _handleError(err: HttpErrorResponse | any){
-	//	return Observable.throw(err.message || 'Error: Unable to complete request.');
-	//}
-
-
-	//getInfo(): Observable<Info> {
-	ngOnInit(){
-		this.http.get("http://localhost:5000/info").subscribe(data => {
-			this.modelName = data as string;
-			console.log(this.modelName);
-		})
-		//.catchError(InfoService._handleError);
-	}
-
-	//ngOnInit(){
-	//}
 
 }

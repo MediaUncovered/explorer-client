@@ -1,15 +1,11 @@
-//import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-//import {Observable} from 'rxjs';
-//import {catchError} from 'rxjs/operators';
+
 import { Component } from '@angular/core';
 import {API_URL} from '../env';
+import { CollectionInfo } from './info.interface';
 
 import { InfoService } from './info.service';
-//import {Info} from './info.model';
-//import {throwError as throw} from 'rxjs';
 
-//@Injectable()
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
@@ -18,15 +14,17 @@ import { InfoService } from './info.service';
 
 export class InfoComponent{
 
-	modelName: string;
+	collectionInfo: CollectionInfo;
+	hasInfo = false;
 
 	constructor(private infoService: InfoService) {}
 	onGet() {
 		this.infoService.getCollectionInfo()
 		.subscribe(
-			(response) => console.log(response),
+			(data: CollectionInfo) => this.collectionInfo = {...data},
 			(error) => console.log(error)
-		);
+		)
+		this.hasInfo = true;
 	}
 
 }

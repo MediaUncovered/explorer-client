@@ -1,9 +1,33 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+	<h1>Welcome to {{ title }} ! </h1>
 </div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+			 <ul class="nav nav-tabs">
+			 	<li class="nav-item">
+			 		<a class="nav-link active" href="#">Home</a>
+			 	</li>
+			 	<li class="nav-item">
+			 		<a class="nav-link" href="#">Explore</a>
+			 	</li>
+			 	<li class="nav-item">
+			 		<a class="nav-link" href="#">Manual</a>
+			 	</li>
+			 	<li class="nav-item">
+			 		<a class="nav-link disabled" href="#">About us</a>
+			 	</li>
+			 </ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>
+<hr><hr>
 <app-info></app-info>
 <app-correlation-graph></app-correlation-graph>
 <hr>

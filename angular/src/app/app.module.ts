@@ -2,6 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
 import {ChartsModule} from 'ng2-charts';
 
@@ -13,6 +14,11 @@ import {AppComponent} from './app.component';
 import { TestsComponent } from './tests/tests.component';
 import {TestComponent} from './test/test.component';
 import { InfoComponent } from './info/info.component';
+
+const appRoutes: Routes = [
+  { path: '', component: TestComponent },
+  { path: 'info', component: InfoComponent },
+];
 
 @NgModule({
   declarations: [
@@ -26,7 +32,8 @@ import { InfoComponent } from './info/info.component';
     BrowserModule,
     ChartsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     CorrelationService,

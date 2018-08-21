@@ -12,12 +12,17 @@ import {CorrelationGraphComponent} from './correlation-graph/correlation-graph.c
 
 import {AppComponent} from './app.component';
 import { TestsComponent } from './tests/tests.component';
-import {TestComponent} from './test/test.component';
+import { HomeComponent} from './home/home.component';
 import { InfoComponent } from './info/info.component';
+import { ExploreComponent } from './explore/explore.component';
+import { ManualComponent } from './manual/manual.component';
+import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
-  { path: '', component: TestComponent },
-  { path: 'info', component: InfoComponent },
+  { path: '', component: HomeComponent },
+  { path: 'explore', component: ExploreComponent},
+  { path: 'manual', component: ManualComponent },
+  { path: 'about', component: AboutComponent },
 ];
 
 @NgModule({
@@ -25,8 +30,11 @@ const appRoutes: Routes = [
     AppComponent,
     CorrelationGraphComponent,
     TestsComponent,
-    TestComponent,
-    InfoComponent
+    HomeComponent,
+    InfoComponent,
+    ExploreComponent,
+    ManualComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

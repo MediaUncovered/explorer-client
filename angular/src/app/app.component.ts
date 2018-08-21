@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-//import {InfoService} from './info/info.service';
-//import {Info} from './info/info.model'
+
 
 @Component({
   selector: 'app-root',
@@ -11,6 +10,4 @@ export class AppComponent {
   title = 'Media Uncovered Explorer';
   serverName = 'default';
 
-  //constructor(private infoApi: InfoService){
-  //}
 }

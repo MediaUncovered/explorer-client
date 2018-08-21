@@ -1,7 +1,7 @@
 <h2> Collection Info </h2>
 <button class="btn btn-primary" (click)="onGet()">Get Collection Info</button>
 <br><br>
-<h3 *ngIf="hasInfo"> Newspaper: {{ collectionInfo.newspaper }} </h3>
-<h3 *ngIf="hasInfo"> Number of articles: {{ collectionInfo.nr_articles }} </h3>
-<h3 *ngIf="hasInfo"> earliest publication date: {{ collectionInfo.earliest_publication_date }} </h3>
-<h3 *ngIf="hasInfo"> latest publication date: {{ collectionInfo.latest_publication_date }} </h3>
+<p *ngIf="hasInfo"> Newspaper: {{ collectionInfo.newspaper }} </p>
+<p *ngIf="hasInfo"> Number of articles: {{ collectionInfo.nr_articles }} </p>
+<p *ngIf="hasInfo"> earliest publication date: {{ collectionInfo.earliest_publication_date }} </p>
+<p *ngIf="hasInfo"> latest publication date: {{ collectionInfo.latest_publication_date }} </p>

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'app-test',
-	templateUrl: './test.component.html'
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.css']
 })
 
-export class TestComponent {
+export class HomeComponent {
 	serverID: number = 10;
 	serverStatus: string = 'offline';
 

@@ -17,6 +17,7 @@ import { InfoComponent } from './info/info.component';
 import { ExploreComponent } from './explore/explore.component';
 import { ManualComponent } from './manual/manual.component';
 import { AboutComponent } from './about/about.component';
+import { KeywordMappingComponent } from './keyword-mapping/keyword-mapping.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     InfoComponent,
     ExploreComponent,
     ManualComponent,
-    AboutComponent
+    AboutComponent,
+    KeywordMappingComponent
   ],
   imports: [
     BrowserModule,

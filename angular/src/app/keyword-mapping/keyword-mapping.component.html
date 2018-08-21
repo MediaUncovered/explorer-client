@@ -1,0 +1,16 @@
+<div> 
+	<input type="text"
+	name="keywords"
+	[(ngModel)]= "keyword">	
+	<input type="text"
+	name="left-axis"
+	[(ngModel)]= "left">
+	<input type="text"
+	name="right"
+	[(ngModel)]= "right">
+</div>
+<button
+	class="btn btn-primary"
+	(click)="onUpdate()">
+	Update
+</button>

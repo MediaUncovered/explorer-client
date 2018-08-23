@@ -7,10 +7,11 @@ import { Routes, RouterModule } from '@angular/router';
 import {ChartsModule} from 'ng2-charts';
 
 import {CorrelationService} from './data/correlation.service';
+import {KeywordMappingService} from './keyword-mapping/keyword-mapping.service';
 import {InfoService} from './info/info.service'
 import {CorrelationGraphComponent} from './correlation-graph/correlation-graph.component';
 
-import {AppComponent} from './app.component';
+import { AppComponent } from './app.component';
 import { TestsComponent } from './tests/tests.component';
 import { HomeComponent} from './home/home.component';
 import { InfoComponent } from './info/info.component';
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     CorrelationService,
-    InfoService
+    InfoService,
+    KeywordMappingService
   ],
   bootstrap: [AppComponent]
 })

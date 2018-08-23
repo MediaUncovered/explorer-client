@@ -1,7 +1,7 @@
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 import { Component } from '@angular/core';
-import {API_URL} from '../env';
+import { API_URL } from '../env';
 import { CollectionInfo } from './info.interface';
 
 import { InfoService } from './info.service';
@@ -18,6 +18,7 @@ export class InfoComponent{
 	hasInfo = false;
 
 	constructor(private infoService: InfoService) {}
+	
 	onGet() {
 		this.infoService.getCollectionInfo()
 		.subscribe(

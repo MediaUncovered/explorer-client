@@ -1,16 +1,26 @@
 <div> 
 	<input type="text"
 	name="keywords"
-	[(ngModel)]= "keyword">	
+	[(ngModel)]= "keywordMapping.keywords">	
 	<input type="text"
 	name="left-axis"
-	[(ngModel)]= "left">
+	[(ngModel)]= "keywordMapping.left">
 	<input type="text"
 	name="right"
-	[(ngModel)]= "right">
+	[(ngModel)]= "keywordMapping.right">
 </div>
 <button
 	class="btn btn-primary"
-	(click)="onUpdate()">
+	(click)="onGetMapping()">
 	Update
 </button>
+<div style="display: block">
+    <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>

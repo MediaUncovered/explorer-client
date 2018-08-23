@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CollectionInfo } from './info.interface';
-//import { map } from 'rxjs/operators';
 
 @Injectable()
 export class InfoService {

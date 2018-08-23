@@ -8,12 +8,8 @@ export class KeywordMappingService {
 
 	constructor(private http: HttpClient) { }
 
-	sendUserInput(keywordMapping: KeywordMapping){
-		return this.http.post('http://localhost:5000/keywordMapping', keywordMapping)
+	getKeywordMapping(keywordMapping: KeywordMapping){
+		const url = 'http://localhost:5000/keywordMapping';
+		return this.http.post(url, keywordMapping)
 	}
-
-	// getKeywordMapping() {
-	// 	return this.http.get<int>('http://localhost:5000/keywordMapping');
-	// }
-
 }

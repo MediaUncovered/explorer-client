@@ -1,5 +1,6 @@
 export class KeywordMapping {
-	keywords: string;
+	keywordString: string;
+	keywords: string[];
 	left: string;
 	right: string;
 	mapping: number[];

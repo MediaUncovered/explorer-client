@@ -13,47 +13,42 @@ export class KeywordMappingComponent implements OnInit {
   keywordMapping: KeywordMapping = new KeywordMapping();
 
   public barChartType: string = 'horizontalBar';
-  public barChartLegend: boolean = true;
+  public barChartLegend: boolean = false;
   public barChartData: any[] = [
     {data: []}
   ];
-  public barChartLabels: string[] = [''];
+  public barChartLabels: string[] = [];
   public barChartOptions: any = {
     scaleShowVerticalLines: false,
   	responsive: true
   };
 
   constructor(private mappingService: KeywordMappingService) {
-    //this.keywordMapping = new KeywordMapping();
+  }
 
+  splitStringToArray(input: string):string[]{
+    return input.split(',');
   }
 
   ngOnInit() {
-    this.keywordMapping.keywords = 'keywords';
+    this.keywordMapping.keywordString = 'keywords';
     this.keywordMapping.left = 'left-axis';
     this.keywordMapping.right = 'right-axis';
     this.keywordMapping.mapping = [];
-
-    //this.barChartLabels.push = 'test';
-    //var values = [];
-    this.barChartData = [{data: [4], label: "test"}];
-
   }
 
-
   onGetMapping() {
-  	console.log(this.keywordMapping.keywords);
-  	console.log(this.keywordMapping.left);
-
-  	this.mappingService.sendUserInput(this.keywordMapping)
+    this.keywordMapping.keywords = this.keywordMapping.keywordString.split(',');
+  	this.mappingService.getKeywordMapping(this.keywordMapping)
   		.subscribe(
-  			(data: any) => this.keywordMapping.mapping = data.mapping,
-  			(error) => console.log(error)
+  			(data: any) => {
+          this.keywordMapping.mapping = data.mapping;
+          this.barChartLabels.length = data.mapping.length;
+          this.barChartData = [{data: data.mapping, label: ""}]; 
+        }
   		);
-    this.barChartData = [{data: this.keywordMapping.mapping, label: this.keywordMapping.keywords}]
-
-  	console.log(this.keywordMapping.mapping);
-  	
+    console.log(this.keywordMapping.mapping);
+    console.log(this.keywordMapping.keywords);
   	}
 
   public chartClicked(e:any):void {
@@ -63,12 +58,5 @@ export class KeywordMappingComponent implements OnInit {
   public chartHovered(e:any):void {
     console.log(e);
   }
-
-
-  	//this.mappingService.getKeywordMapping()
-  	//	.subscribe(
-  	//		(data: int) => this.value = {...data},
-  	//		(error) => console.log(error)
-  	//	)
 
 }

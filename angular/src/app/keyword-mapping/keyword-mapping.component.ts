@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { KeywordMapping } from './keyword-mapping.interface';
+import { UserInput } from './user-input.interface';
 import { KeywordMappingService } from './keyword-mapping.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { KeywordMappingService } from './keyword-mapping.service';
 
 export class KeywordMappingComponent implements OnInit {
 
+  userInput: UserInput = new UserInput();
   keywordMapping: KeywordMapping = new KeywordMapping();
 
   public barChartType: string = 'horizontalBar';
@@ -27,13 +29,19 @@ export class KeywordMappingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.keywordMapping.keywordString = 'keywords';
-    this.keywordMapping.left = 'left-axis';
-    this.keywordMapping.right = 'right-axis';
+    this.userInput.keywordString = 'keywords';
+    this.userInput.leftString = 'left-axis';
+    this.userInput.rightString = 'right-axis';
+  }
+
+  splitInputToArray(){
+    this.keywordMapping.keywords = this.userInput.keywordString.split(',');
+    this.keywordMapping.left = this.userInput.leftString.split(',');
+    this.keywordMapping.right = this.userInput.rightString.split(',');
   }
 
   onGetMapping() {
-    this.keywordMapping.keywords = this.keywordMapping.keywordString.split(',');
+    this.splitInputToArray();
   	this.mappingService.getKeywordMapping(this.keywordMapping)
   		.subscribe(
   			(data: any) => {
@@ -41,7 +49,6 @@ export class KeywordMappingComponent implements OnInit {
           this.barChartData = [{data: data.mapping, label: ""}]; 
         }
   		);
-    console.log(this.keywordMapping.keywords);
   	}
 
   public chartClicked(e:any):void {

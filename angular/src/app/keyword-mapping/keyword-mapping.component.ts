@@ -32,6 +32,7 @@ export class KeywordMappingComponent implements OnInit {
     this.userInput.keywordString = 'keywords';
     this.userInput.leftString = 'left-axis';
     this.userInput.rightString = 'right-axis';
+    this.barChartLabels.length = 1;
   }
 
   splitInputToArray(){
@@ -40,13 +41,14 @@ export class KeywordMappingComponent implements OnInit {
     this.keywordMapping.right = this.userInput.rightString.split(',');
   }
 
+
   onGetMapping() {
     this.splitInputToArray();
   	this.mappingService.getKeywordMapping(this.keywordMapping)
   		.subscribe(
   			(data: any) => {
-          this.barChartLabels.length = data.mapping.length;
-          this.barChartData = [{data: data.mapping, label: ""}]; 
+          this.barChartLabels = this.keywordMapping.keywords;
+          this.barChartData = [{data: data.mapping, label: ""}];
         }
   		);
   	}

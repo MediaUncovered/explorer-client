@@ -14,7 +14,7 @@
 	(click)="onGetMapping()">
 	Update
 </button>
-<div style="display: block">
+<div style="display: block" *ngIf="barChartLabels.length > 0">
     <canvas baseChart
             [datasets]="barChartData"
             [labels]="barChartLabels"

@@ -1,6 +1,8 @@
+<h3> Explore Language Usage </h3>
+<br>
 <div>
   <input #wordinput />
-  <button (click)="correlationService.query(wordinput.value)">Update</button>
+  <button class="btn btn-primary" (click)="correlationService.query(wordinput.value)">Update</button>
   <div style="display: block">
     <canvas baseChart
             [datasets]="barChartData"

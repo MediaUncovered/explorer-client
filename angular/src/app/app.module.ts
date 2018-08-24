@@ -12,7 +12,6 @@ import {InfoService} from './info/info.service'
 import {CorrelationGraphComponent} from './correlation-graph/correlation-graph.component';
 
 import { AppComponent } from './app.component';
-import { TestsComponent } from './tests/tests.component';
 import { HomeComponent} from './home/home.component';
 import { InfoComponent } from './info/info.component';
 import { ExploreComponent } from './explore/explore.component';
@@ -31,7 +30,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CorrelationGraphComponent,
-    TestsComponent,
     HomeComponent,
     InfoComponent,
     ExploreComponent,

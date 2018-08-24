@@ -26,15 +26,10 @@ export class KeywordMappingComponent implements OnInit {
   constructor(private mappingService: KeywordMappingService) {
   }
 
-  splitStringToArray(input: string):string[]{
-    return input.split(',');
-  }
-
   ngOnInit() {
     this.keywordMapping.keywordString = 'keywords';
     this.keywordMapping.left = 'left-axis';
     this.keywordMapping.right = 'right-axis';
-    this.keywordMapping.mapping = [];
   }
 
   onGetMapping() {
@@ -42,12 +37,10 @@ export class KeywordMappingComponent implements OnInit {
   	this.mappingService.getKeywordMapping(this.keywordMapping)
   		.subscribe(
   			(data: any) => {
-          this.keywordMapping.mapping = data.mapping;
           this.barChartLabels.length = data.mapping.length;
           this.barChartData = [{data: data.mapping, label: ""}]; 
         }
   		);
-    console.log(this.keywordMapping.mapping);
     console.log(this.keywordMapping.keywords);
   	}
 

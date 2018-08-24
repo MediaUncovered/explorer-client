@@ -19,7 +19,7 @@ export class InfoComponent{
 
 	constructor(private infoService: InfoService) {}
 	
-	onGet() {
+	onGetInfo() {
 		this.infoService.getCollectionInfo()
 		.subscribe(
 			(data: CollectionInfo) => this.collectionInfo = {...data},

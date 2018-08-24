@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { KeywordMapping } from './keyword-mapping.interface';
-import { map } from 'rxjs/operators';
 
 @Injectable()
 export class KeywordMappingService {

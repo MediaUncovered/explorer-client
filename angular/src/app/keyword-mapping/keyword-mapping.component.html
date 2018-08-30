@@ -1,5 +1,4 @@
 <h3> Detect Bias </h3>
-<br>
 <div> 
 	<input type="text"
 	name="keywords"
@@ -11,9 +10,7 @@
 	name="right"
 	[(ngModel)]= "userInput.rightString">
 </div>
-<button
-	class="btn btn-primary"
-	(click)="onGetMapping()">
+<button class="btn btn-primary" (click)="onGetMapping()">
 	Update
 </button>
 <div style="display: block" *ngIf="barChartLabels.length > 0">

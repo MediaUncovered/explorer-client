@@ -1,8 +1,8 @@
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 import { Component } from '@angular/core';
-import { API_URL } from '../env';
 import { CollectionInfo } from './info.interface';
+import { environment } from '../../environments/environment';
 
 import { InfoService } from './info.service';
 

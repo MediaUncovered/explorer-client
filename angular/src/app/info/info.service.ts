@@ -8,7 +8,7 @@ export class InfoService {
 	constructor(private http: HttpClient) { }
 
 	getCollectionInfo() {
-		return this.http.get<CollectionInfo>('http://localhost:5000/info');
+		return this.http.get<CollectionInfo>("environment.API_URL" + 'info');
 	}
 
 }

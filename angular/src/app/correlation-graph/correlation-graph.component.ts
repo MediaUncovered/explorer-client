@@ -34,7 +34,6 @@ export class CorrelationGraphComponent implements OnInit {
           this.barChartLabels.push(correlation.label);
           values.push(correlation.value);
         }
-
         this.barChartData = [ {data: values, label: ""} ];
       })
   }

@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="row">
+			 <ul class="nav nav-tabs">
+			 	<li class="nav-item"
+			 		routerLinkActive="active"
+			 		[routerLinkActiveOptions]="{exact: true}">
+    				<a class="nav-link"
+    					[routerLink]="['/']">Home</a>
+    			</li>
+			 	<li class="nav-item"
+			 		routerLinkActive="active">
+			 		<a class="nav-link"	
+			 			routerLink="/explore">Explore</a>
+			 	</li>
+			 	<li class="nav-item"
+			 		routerLinkActive="active"
+			 		[routerLinkActiveOptions]="{exact: true}">
+			 		<a class="nav-link"	
+			 			routerLink="/manual">Manual</a>
+			 	</li>
+			 	<li class="nav-item"
+			 		routerLinkActive="active">
+			 		<a class="nav-link"
+			 			routerLink="/about">About us</a>
+			 	</li>
+			 </ul>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+			<br>
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>

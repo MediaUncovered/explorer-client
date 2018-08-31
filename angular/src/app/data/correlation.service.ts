@@ -3,7 +3,7 @@ import {EventEmitter, Injectable, Output} from '@angular/core';
 import {Observable, of, Subject} from 'rxjs';
 import {catchError, map, tap} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-
+import {environment} from '../../environments/environment';
 import {Correlation} from './correlation';
 
 @Injectable({
@@ -17,7 +17,7 @@ export class CorrelationService {
   constructor(private http: HttpClient) { }
 
   query(word: string): void {
-    const url = "http://localhost:5000/query/"+word;
+    const url = environment.API_URL + "query/" + word;
     this.http.get<Correlation[]>(url).subscribe(correlations => {
         this.correlationsSource.next(correlations);
       });

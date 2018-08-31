@@ -8,3 +8,9 @@ button {
 p {
 	margin-top:10px;
 }
+th {
+	width: 250px;
+}
+table {
+	width: 500px;
+}

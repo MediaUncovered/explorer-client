@@ -1,6 +1,22 @@
 <h3> Collection Info </h3>
 <button class="btn btn-primary" (click)="onGetInfo()">Get Collection Info</button>
-<p *ngIf="hasInfo"> Newspaper: {{ collectionInfo.newspaper }} </p>
-<p *ngIf="hasInfo"> Number of articles: {{ collectionInfo.nr_articles }} </p>
-<p *ngIf="hasInfo"> earliest publication date: {{ collectionInfo.earliest_publication_date }} </p>
-<p *ngIf="hasInfo"> latest publication date: {{ collectionInfo.latest_publication_date }} </p>
+<table class="table" *ngIf="hasInfo">
+	<tbody>
+		<tr>
+			<th scope="row">Newspaper:</th>
+			<td>{{collectionInfo.newspaper}}</td>
+		</tr>
+		<tr>
+			<th scope="row">Number of publications:</th>
+			<td>{{collectionInfo.nr_articles}}</td>
+		</tr>
+		<tr>
+			<th scope="row">Earliest publication date:</th>
+			<td>{{collectionInfo.earliest_publication_date}}</td>
+		</tr>
+		<tr>
+			<th scope="row">Latest publication date:</th>
+			<td>{{collectionInfo.latest_publication_date}}</td>
+		</tr>	
+	</tbody>
+</table>

@@ -31,9 +31,9 @@ export class KeywordMappingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userInput.keywordString = 'keywords';
-    this.userInput.leftString = 'left-axis';
-    this.userInput.rightString = 'right-axis';
+    this.userInput.keywordString = '';
+    this.userInput.leftString = '';
+    this.userInput.rightString = '';
     this.barChartLabels.length = 1;
   }
 

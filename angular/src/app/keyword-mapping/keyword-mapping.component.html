@@ -1,14 +1,19 @@
 <h3> Detect Bias </h3>
-<div> 
-	<input type="text"
-	name="keywords"
-	[(ngModel)]= "userInput.keywordString">	
-	<input type="text"
-	name="left-axis"
-	[(ngModel)]= "userInput.leftString">
-	<input type="text"
-	name="right"
-	[(ngModel)]= "userInput.rightString">
+<div class="container">
+	<form>
+		<label>Keywords:</label>
+		<input type="text"
+		name="keywords"
+		[(ngModel)]= "userInput.keywordString"><br />
+		<label>Left Axis:</label>
+		<input type="text"
+		name="left-axis"
+		[(ngModel)]= "userInput.leftString"><br />
+		<label>Right Axis:</label>
+		<input type="text"
+		name="right"
+		[(ngModel)]= "userInput.rightString"><br />
+	</form>
 </div>
 <button class="btn btn-primary" (click)="onGetMapping()">
 	Update

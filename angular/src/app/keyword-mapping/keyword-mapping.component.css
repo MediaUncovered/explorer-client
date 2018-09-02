@@ -8,3 +8,16 @@ p {
 	margin-left: 20px;
 	color: red;
 }
+
+.container label {
+	display: inline-block;
+	width: 100px;
+	text-align: left;
+}
+.container input{
+	width: 400px;
+}
+button {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

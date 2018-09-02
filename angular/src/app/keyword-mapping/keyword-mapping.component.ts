@@ -13,6 +13,8 @@ export class KeywordMappingComponent implements OnInit {
 
   userInput: UserInput = new UserInput();
   keywordMapping: KeywordMapping = new KeywordMapping();
+  errorMessage: string = 'WARNING: at least one of your input words is not included in the model.';
+  showError = false;
 
   public barChartType: string = 'horizontalBar';
   public barChartLegend: boolean = false;
@@ -22,7 +24,7 @@ export class KeywordMappingComponent implements OnInit {
   public barChartLabels: string[] = [];
   public barChartOptions: any = {
     scaleShowVerticalLines: false,
-  	responsive: true
+  	responsive: true,
   };
 
   constructor(private mappingService: KeywordMappingService) {
@@ -49,7 +51,12 @@ export class KeywordMappingComponent implements OnInit {
   			(data: any) => {
           this.barChartLabels = this.keywordMapping.keywords;
           this.barChartData = [{data: data.mapping, label: ""}];
-        }
+          this.showError = false;
+        },
+        error => {
+          console.log('Mapping Service ERROR:', error);
+          this.showError = true;
+        },
   		);
   	}
 

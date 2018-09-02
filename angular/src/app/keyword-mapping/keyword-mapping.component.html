@@ -13,6 +13,7 @@
 <button class="btn btn-primary" (click)="onGetMapping()">
 	Update
 </button>
+<p  *ngIf="showError"> {{errorMessage}} </p>
 <div style="display: block" *ngIf="barChartLabels.length > 0">
     <canvas baseChart
             [datasets]="barChartData"
@@ -21,5 +22,6 @@
             [legend]="barChartLegend"
             [chartType]="barChartType"
             (chartHover)="chartHovered($event)"
-            (chartClick)="chartClicked($event)"></canvas>
-  </div>
+            (chartClick)="chartClicked($event)">
+    </canvas>
+</div>

@@ -68,4 +68,24 @@ export class KeywordMappingComponent implements OnInit {
     console.log(e);
   }
 
+  onGetGenderMapping(){
+    this.userInput.keywordString = 'professor, programmer, secretary, doctor, artist, nurse';
+    this.userInput.leftString = 'woman, female';
+    this.userInput.rightString = 'man, male';
+    this.onGetMapping()
+  }
+
+  onGetColorMapping(){
+    this.userInput.keywordString = 'red, green, blue, yellow, black, white';
+    this.userInput.leftString = 'positive';
+    this.userInput.rightString = 'negative';
+    this.onGetMapping()
+  }
+
+  reset(){
+    this.userInput.keywordString = '';
+    this.userInput.leftString = '';
+    this.userInput.rightString = '';
+  }
+
 }

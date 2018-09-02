@@ -8,16 +8,36 @@ p {
 	margin-left: 20px;
 	color: red;
 }
-
-.container label {
+.grid-container {
+	display: grid;
+	grid-template-columns: 470px 100px;
+	grid-template-rows: 60px 60px 90px 60px;
+	align-items: left;
+	align-content: left;
+	grid-gap: 5px;
+}
+.grid-container > div {
+  text-align: left;
+  padding: 20px 0;
+}
+.grid-container label {
 	display: inline-block;
 	width: 100px;
 	text-align: left;
+	font-size: 16px;
 }
-.container input{
-	width: 400px;
+.grid-container input{
+	width: 300px;
 }
 button {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	height: 45px;
+	width: 150px;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #007bff;
+	border-color: #007bff;
 }

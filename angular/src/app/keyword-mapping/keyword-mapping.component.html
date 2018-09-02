@@ -1,23 +1,47 @@
 <h3> Detect Bias </h3>
-<div class="container">
-	<form>
-		<label>Keywords:</label>
-		<input type="text"
-		name="keywords"
-		[(ngModel)]= "userInput.keywordString"><br />
-		<label>Left Axis:</label>
-		<input type="text"
-		name="left-axis"
-		[(ngModel)]= "userInput.leftString"><br />
-		<label>Right Axis:</label>
-		<input type="text"
-		name="right"
-		[(ngModel)]= "userInput.rightString"><br />
-	</form>
+<div class="grid-container">
+		<div>
+			<label>Keywords:</label>
+			<input type="text"
+			name="keywords"
+			[(ngModel)]= "userInput.keywordString"><br />
+		</div>
+		<div>
+			<button class="btn btn-primary" (click)="onGetMapping()">
+			Update
+			</button>
+		</div>
+		<div>
+			<label>Left Axis:</label>
+			<input type="text"
+			name="left-axis"
+			[(ngModel)]= "userInput.leftString"><br />
+		</div>
+		<div>
+			<button class="btn btn-primary" (click)="reset()">
+			Reset
+			</button>
+		</div>
+		<div>
+			<label>Right Axis:</label>
+			<input type="text"
+			name="right"
+			[(ngModel)]= "userInput.rightString"><br />
+		</div>
+		<div>
+		</div>
+		<div>
+			Example mappings:
+		</div>
 </div>
-<button class="btn btn-primary" (click)="onGetMapping()">
-	Update
-</button>
+<div>
+	<button class="btn btn-secondary" id="example" (click)="onGetGenderMapping()">
+		Gender Mapping
+	</button>
+	<button class="btn btn-secondary" id="example" (click)="onGetColorMapping()">
+		Color Mapping
+	</button>
+</div>
 <p  *ngIf="showError"> {{errorMessage}} </p>
 <div style="display: block" *ngIf="barChartLabels.length > 0">
     <canvas baseChart

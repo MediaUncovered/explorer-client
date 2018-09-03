@@ -2,7 +2,10 @@
 <div>
   <input #wordinput />
   <button class="btn btn-primary" (click)="correlationService.query(wordinput.value)">Update</button>
-  <div style="display: block">
+  </div>
+  <p *ngIf="correlationService.hasError"> {{errorMessage}} </p>
+  <div>
+  <div style="display:block; width: 120%">
     <canvas baseChart
             [datasets]="barChartData"
             [labels]="barChartLabels"

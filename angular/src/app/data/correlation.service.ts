@@ -11,6 +11,8 @@ import {Correlation} from './correlation';
 })
 export class CorrelationService {
 
+  hasError: boolean = false;
+
   private correlationsSource = new Subject<Correlation[]>();
   correlations$ = this.correlationsSource.asObservable();
 
@@ -20,6 +22,11 @@ export class CorrelationService {
     const url = environment.API_URL + "query/" + word;
     this.http.get<Correlation[]>(url).subscribe(correlations => {
         this.correlationsSource.next(correlations);
+        this.hasError = false;
+      },
+      error => {
+        console.log('UPPS');
+        this.hasError = true;
       });
   }
 

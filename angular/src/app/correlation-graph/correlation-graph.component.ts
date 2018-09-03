@@ -21,6 +21,8 @@ export class CorrelationGraphComponent implements OnInit {
     {data: []}
   ];
 
+  errorMessage: string = 'WARNING: This word is not included in the model.'
+
   constructor(private correlationService: CorrelationService) { }
 
   ngOnInit() {
@@ -35,7 +37,8 @@ export class CorrelationGraphComponent implements OnInit {
           values.push(correlation.value);
         }
         this.barChartData = [ {data: values, label: ""} ];
-      })
+        }
+      )
   }
 
   // events

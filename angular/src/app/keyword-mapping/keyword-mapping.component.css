@@ -5,20 +5,15 @@ h3 {
 p {
 	margin-top: 20px;
 	margin-bottom: 40px;
-	margin-left: 20px;
 	color: red;
 }
 .grid-container {
 	display: grid;
 	grid-template-columns: 470px 100px;
-	grid-template-rows: 60px 60px 90px 60px;
+	grid-template-rows: 45px 45px 50px;
 	align-items: left;
 	align-content: left;
 	grid-gap: 5px;
-}
-.grid-container > div {
-  text-align: left;
-  padding: 20px 0;
 }
 .grid-container label {
 	display: inline-block;
@@ -27,17 +22,17 @@ p {
 	font-size: 16px;
 }
 .grid-container input{
-	width: 300px;
+	width: 330px;
 }
-button {
+
+.btn-primary {
 	margin-bottom: 10px;
 	margin-right: 10px;
 	height: 45px;
 	width: 150px;
 }
 
-.btn-primary {
-	color: #fff;
-	background-color: #007bff;
-	border-color: #007bff;
+.btn-secondary {
+	margin-left: 10px;
+	margin-bottom: 30px;
 }

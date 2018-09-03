@@ -28,22 +28,22 @@
 			name="right"
 			[(ngModel)]= "userInput.rightString"><br />
 		</div>
-		<div>
-		</div>
-		<div>
-			Example mappings:
-		</div>
 </div>
+<p *ngIf="showError" style="width: 900px"> {{errorMessage}} </p>
 <div>
-	<button class="btn btn-secondary" id="example" (click)="onGetGenderMapping()">
+	<div style="font-size: 18px; margin-top: 30px; margin-bottom: 15px">
+		Example mappings:
+	</div>
+	<div>
+	<button class="btn btn-secondary" style="margin-left: 100px; " (click)="onGetGenderMapping()">
 		Gender Mapping
 	</button>
-	<button class="btn btn-secondary" id="example" (click)="onGetColorMapping()">
+	<button class="btn btn-secondary"(click)="onGetColorMapping()">
 		Color Mapping
 	</button>
+	</div>
 </div>
-<p  *ngIf="showError"> {{errorMessage}} </p>
-<div style="display: block" *ngIf="barChartLabels.length > 0">
+<div style="display:block; width:150%" *ngIf="barChartLabels.length > 0">
     <canvas baseChart
             [datasets]="barChartData"
             [labels]="barChartLabels"

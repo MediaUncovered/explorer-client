@@ -1,0 +1,15 @@
+<h3> Explore Language Usage </h3>
+<div>
+  <input #wordinput />
+  <button class="btn btn-primary" (click)="correlationService.query(wordinput.value)">Update</button>
+</div>
+<div>
+	<p *ngIf=correlationService.hasError>{{errorMessage}}</p>
+	<angular-tag-cloud
+	    [data]="data"
+	    [width]="options.width"
+	    [height]="options.height"
+	    [overflow]="options.overflow"
+	    [zoomOnHover]="zoomOnHoverOptions">
+	</angular-tag-cloud>
+</div>

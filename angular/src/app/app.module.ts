@@ -4,7 +4,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
-import {ChartsModule} from 'ng4-charts/ng4-charts';
+import { ChartsModule } from 'ng4-charts/ng4-charts';
+import { TagCloudModule } from 'angular-tag-cloud-module';
 
 import {CorrelationService} from './data/correlation.service';
 import {KeywordMappingService} from './keyword-mapping/keyword-mapping.service';
@@ -19,6 +20,7 @@ import { ManualComponent } from './manual/manual.component';
 import { AboutComponent } from './about/about.component';
 import { KeywordMappingComponent } from './keyword-mapping/keyword-mapping.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { WordcloudComponent } from './wordcloud/wordcloud.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -37,14 +39,16 @@ const appRoutes: Routes = [
     ManualComponent,
     AboutComponent,
     KeywordMappingComponent,
-    NavigationComponent
+    NavigationComponent,
+    WordcloudComponent
   ],
   imports: [
     BrowserModule,
     ChartsModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    TagCloudModule
   ],
   providers: [
     CorrelationService,

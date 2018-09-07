@@ -25,7 +25,7 @@ export class CorrelationService {
         this.hasError = false;
       },
       error => {
-        console.log('UPPS');
+        console.log('ERROR in Correlation Service Query');
         this.hasError = true;
       });
   }

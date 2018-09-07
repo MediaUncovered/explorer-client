@@ -1,16 +1,15 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ChartsModule } from 'ng4-charts/ng4-charts';
 import { TagCloudModule } from 'angular-tag-cloud-module';
 
-import {CorrelationService} from './data/correlation.service';
-import {KeywordMappingService} from './keyword-mapping/keyword-mapping.service';
-import {InfoService} from './info/info.service'
-import {CorrelationGraphComponent} from './correlation-graph/correlation-graph.component';
+import { CorrelationService } from './data/correlation.service';
+import { KeywordMappingService } from './keyword-mapping/keyword-mapping.service';
+import { InfoService } from './info/info.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent} from './home/home.component';
@@ -32,7 +31,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    CorrelationGraphComponent,
     HomeComponent,
     InfoComponent,
     ExploreComponent,

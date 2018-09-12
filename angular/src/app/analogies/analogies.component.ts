@@ -14,22 +14,25 @@ export class AnalogiesComponent implements OnInit {
 
   input: WordPair = new WordPair();
   analogies: Analogy[];
-  hasAnalogies = false;
+  hasError = false;
+  errorMessage: string = 'WARNING: at least one of your input words is not included in the model.';
 
   ngOnInit() {
   	this.input.a = 'a';
   	this.input.b = 'b';
+    this.analogies = [ new Analogy()];
   }
 
   generateAnalogies(){
+    console.log(this.analogies.length);
     this.analogyService.getAnalogies(this.input)
     .subscribe(
       (data: any) => {
-        this.hasAnalogies = true;
         this.analogies = data;
       },
       error => {
         console.log('ERROR: ', error);
+        this.hasError = true;
       }
     )
   }

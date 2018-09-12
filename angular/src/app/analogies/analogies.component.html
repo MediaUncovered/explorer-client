@@ -8,7 +8,13 @@
 	<input type="text" name="bInput" [(ngModel)]="input.b">
 	 <button class="btn btn-primary" (click)="generateAnalogies()">Generate Analogies</button>
 </div>
-<table class="table" *ngIf="hasAnalogies">
+<div>
+<p *ngIf="analogies.length==0" color="red"> No analogies were found. </p>
+</div>
+<div>
+<p *ngIf="hasError" color="red"> {{errorMessage}}</p>
+</div>
+<table class="table">
   <thead>
     <tr>
       <th scope="col">x</th>

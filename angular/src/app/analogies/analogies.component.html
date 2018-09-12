@@ -1,0 +1,29 @@
+<h3> Generate Analogies </h3>
+<div>
+	Generate analogies such as the famous examples <i> man:king :: woman:queen </i> or
+	<i>Paris:France :: Berlin:Germany</i>. Specify two terms, <i>a, b</i>, to generate related word pairs <i>(x,y)</i> that match the following analogy scheme:	<i> a:x :: b:y </i>.
+</div>
+<div>
+	<input type="text" name="aInput" [(ngModel)]="input.a">
+	<input type="text" name="bInput" [(ngModel)]="input.b">
+	 <button class="btn btn-primary" (click)="generateAnalogies()">Generate Analogies</button>
+</div>
+<table class="table" *ngIf="hasAnalogies">
+  <thead>
+    <tr>
+      <th scope="col">x</th>
+      <th scope="col">y</th>
+      <th scope="col">score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let analogy of analogies">
+      <td>{{analogy.x}}</td>
+      <td>{{analogy.y}}</td>
+      <td>{{analogy.score}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+

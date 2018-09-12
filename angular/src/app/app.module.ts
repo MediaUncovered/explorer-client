@@ -10,6 +10,7 @@ import { TagCloudModule } from 'angular-tag-cloud-module';
 import { CorrelationService } from './data/correlation.service';
 import { KeywordMappingService } from './keyword-mapping/keyword-mapping.service';
 import { InfoService } from './info/info.service';
+import { AnalogyService } from './data/analogy.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent} from './home/home.component';
@@ -20,6 +21,7 @@ import { AboutComponent } from './about/about.component';
 import { KeywordMappingComponent } from './keyword-mapping/keyword-mapping.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { WordcloudComponent } from './wordcloud/wordcloud.component';
+import { AnalogiesComponent } from './analogies/analogies.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     AboutComponent,
     KeywordMappingComponent,
     NavigationComponent,
-    WordcloudComponent
+    WordcloudComponent,
+    AnalogiesComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ const appRoutes: Routes = [
   providers: [
     CorrelationService,
     InfoService,
-    KeywordMappingService
+    KeywordMappingService,
+    AnalogyService,
   ],
   bootstrap: [AppComponent]
 })

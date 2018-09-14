@@ -20,7 +20,7 @@ export class AnalogiesComponent implements OnInit {
   ngOnInit() {
   	this.input.a = 'a';
   	this.input.b = 'b';
-    this.analogies = [ new Analogy()];
+    this.analogies = [ new Analogy('x', 'y', 0.39)];
   }
 
   generateAnalogies(){

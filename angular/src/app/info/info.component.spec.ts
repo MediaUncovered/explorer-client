@@ -1,6 +1,5 @@
 import { TestBed, async, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-//import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { InfoComponent } from './info.component';
 import { InfoService } from './info.service';

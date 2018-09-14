@@ -10,6 +10,9 @@ import { Analogy } from '../data/analogy.interface';
 
 describe('AnalogiesComponent', () => {
 
+  const mockEmptyAnalogies = [];
+  const mockTwoAnalogies = [new Analogy('x1','y1',0.82), new Analogy('x2','y2',0.34)];
+
   let component: AnalogiesComponent;
   let service: AnalogyService;
   let fixture: ComponentFixture<AnalogiesComponent>;
@@ -28,6 +31,7 @@ describe('AnalogiesComponent', () => {
     fixture = TestBed.createComponent(AnalogiesComponent);
     component = fixture.debugElement.componentInstance;
     service = TestBed.get(AnalogyService);
+    fixture.detectChanges();
   });
   
 
@@ -35,12 +39,33 @@ describe('AnalogiesComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should have more analogies with at least one element', () =>{
+    expect(component.analogies.length).toBeGreaterThan(0);
+  });
+
   it('should have two analogies', () =>{
-    const mock = [new Analogy(), new Analogy()];
-    spyOn(service, 'getAnalogies').and.returnValue(of(mock));
-    fixture.detectChanges();
+    spyOn(service, 'getAnalogies').and.returnValue(of(mockTwoAnalogies));
     component.generateAnalogies();
     expect(component.analogies.length).toBe(2);
   });
+
+  it('should not have an the error if two analogies are obtained', () =>{
+    spyOn(service, 'getAnalogies').and.returnValue(of(mockTwoAnalogies));
+    component.generateAnalogies();
+    expect(component.hasError).toBe(false);
+  });
+
+  it('should have zero analogies', () =>{
+    spyOn(service, 'getAnalogies').and.returnValue(of(mockEmptyAnalogies));
+    component.generateAnalogies();
+    expect(component.analogies.length).toBe(0);
+  });
+
+  it('should not have an error if no analogies are obtained', () =>{
+    spyOn(service, 'getAnalogies').and.returnValue(of(mockEmptyAnalogies));
+    component.generateAnalogies();
+    expect(component.hasError).toBe(false);
+  });
+
 
 });

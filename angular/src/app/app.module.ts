@@ -22,6 +22,8 @@ import { KeywordMappingComponent } from './keyword-mapping/keyword-mapping.compo
 import { NavigationComponent } from './navigation/navigation.component';
 import { WordcloudComponent } from './wordcloud/wordcloud.component';
 import { AnalogiesComponent } from './analogies/analogies.component';
+import { ModelSelectionComponent } from './model-selection/model-selection.component';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -41,7 +43,9 @@ const appRoutes: Routes = [
     KeywordMappingComponent,
     NavigationComponent,
     WordcloudComponent,
-    AnalogiesComponent
+    AnalogiesComponent,
+    ModelSelectionComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

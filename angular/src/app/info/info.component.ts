@@ -1,6 +1,6 @@
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CollectionInfo } from './info.interface';
 import { environment } from '../../environments/environment';
 
@@ -12,20 +12,18 @@ import { InfoService } from './info.service';
   styleUrls: ['./info.component.css']
 })
 
-export class InfoComponent{
+export class InfoComponent implements OnInit{
 
 	collectionInfo: CollectionInfo;
-	hasInfo = false;
 
 	constructor(private infoService: InfoService) {}
 	
-	onGetInfo() {
+	ngOnInit() {
 		this.infoService.getCollectionInfo()
 		.subscribe(
 			(data: CollectionInfo) => this.collectionInfo = {...data},
 			(error) => console.log(error)
 		)
-		this.hasInfo = true;
 	}
 
 }

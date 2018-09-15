@@ -22,8 +22,4 @@ describe('Component: Info', () => {
 		expect(infoComponent).toBeTruthy();
 	});
 
-	it('should not have information about a collection', () => {
-		expect(infoComponent.hasInfo).toBeFalsy;
-	})
-
 });

@@ -11,10 +11,12 @@ import { CorrelationService } from './data/correlation.service';
 import { KeywordMappingService } from './keyword-mapping/keyword-mapping.service';
 import { InfoService } from './info/info.service';
 import { AnalogyService } from './data/analogy.service';
+import { ModelInfoService } from './model-info/model-info.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent} from './home/home.component';
 import { InfoComponent } from './info/info.component';
+import { ModelInfoComponent } from './model-info/model-info.component';
 import { ExploreComponent } from './explore/explore.component';
 import { ManualComponent } from './manual/manual.component';
 import { AboutComponent } from './about/about.component';
@@ -44,7 +46,8 @@ const appRoutes: Routes = [
     NavigationComponent,
     WordcloudComponent,
     AnalogiesComponent,
-    ModelSelectionComponent,
+      ModelSelectionComponent,
+      ModelInfoComponent,
     DropdownDirective
   ],
   imports: [
@@ -59,7 +62,8 @@ const appRoutes: Routes = [
     CorrelationService,
     InfoService,
     KeywordMappingService,
-    AnalogyService,
+      AnalogyService,
+      ModelInfoService,
   ],
   bootstrap: [AppComponent]
 })

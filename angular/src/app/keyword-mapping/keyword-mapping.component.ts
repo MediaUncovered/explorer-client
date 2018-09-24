@@ -37,15 +37,20 @@ export class KeywordMappingComponent implements OnInit {
     this.barChartLabels.length = 1;
   }
 
-  splitInputToArray(){
-    this.keywordMapping.keywords = this.userInput.keywordString.split(',');
-    this.keywordMapping.left = this.userInput.leftString.split(',');
-    this.keywordMapping.right = this.userInput.rightString.split(',');
-  }
+    stringToArray(input){
+        var words = input.split(',');
+        return words.map(x => x.trim())
+    }
+
+    transformInput(){
+        this.keywordMapping.keywords = this.stringToArray(this.userInput.keywordString);
+        this.keywordMapping.left = this.stringToArray(this.userInput.leftString);
+        this.keywordMapping.right = this.stringToArray(this.userInput.rightString);
+    }
 
 
   onGetMapping() {
-    this.splitInputToArray();
+    this.transformInput();
   	this.mappingService.getKeywordMapping(this.keywordMapping)
   		.subscribe(
   			(data: any) => {

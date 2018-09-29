@@ -9,14 +9,14 @@ import { TagCloudModule } from 'angular-tag-cloud-module';
 
 import { CorrelationService } from './data/correlation.service';
 import { KeywordMappingService } from './keyword-mapping/keyword-mapping.service';
-import { InfoService } from './info/info.service';
 import { AnalogyService } from './data/analogy.service';
-import { ModelInfoService } from './model-info/model-info.service';
+import { InfoService } from './info/info.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent} from './home/home.component';
-import { InfoComponent } from './info/info.component';
-import { ModelInfoComponent } from './model-info/model-info.component';
+import { CollectionInfoComponent } from './info/collection-info.component';
+import { InfoNavigationComponent } from './info/info-navigation.component';
+import { ModelInfoComponent } from './info/model-info.component';
 import { ExploreComponent } from './explore/explore.component';
 import { ManualComponent } from './manual/manual.component';
 import { AboutComponent } from './about/about.component';
@@ -26,19 +26,27 @@ import { WordcloudComponent } from './wordcloud/wordcloud.component';
 import { AnalogiesComponent } from './analogies/analogies.component';
 import { ModelSelectionComponent } from './model-selection/model-selection.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { ReliabilityComponent } from './info/reliability.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'explore', component: ExploreComponent},
   { path: 'manual', component: ManualComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'explore', component: ExploreComponent,
+		children: [
+			{path: '', component: CollectionInfoComponent, outlet:'info'},
+			{path: 'model', component: ModelInfoComponent, outlet:'info'},
+			{path: 'collection', component: CollectionInfoComponent, outlet:'info'},
+			{path: 'reliability', component: ReliabilityComponent, outlet:'info'},
+		]}
 ];
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+		AppComponent,
     HomeComponent,
-    InfoComponent,
+    CollectionInfoComponent,
     ExploreComponent,
     ManualComponent,
     AboutComponent,
@@ -46,9 +54,11 @@ const appRoutes: Routes = [
     NavigationComponent,
     WordcloudComponent,
     AnalogiesComponent,
-      ModelSelectionComponent,
-      ModelInfoComponent,
-    DropdownDirective
+		ModelSelectionComponent,
+		ModelInfoComponent,
+    DropdownDirective,
+    ReliabilityComponent,
+		InfoNavigationComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,11 +70,10 @@ const appRoutes: Routes = [
   ],
   providers: [
     CorrelationService,
-    InfoService,
     KeywordMappingService,
-      AnalogyService,
-      ModelInfoService,
-  ],
+		AnalogyService,
+		InfoService,
+	],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

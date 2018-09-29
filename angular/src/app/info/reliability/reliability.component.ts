@@ -1,10 +1,10 @@
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 import { Component, OnInit } from '@angular/core';
-import { Reliability } from './reliability.interface';
-import { environment } from '../../environments/environment';
+import { Reliability } from '../data/reliability.interface';
+import { environment } from '../../../environments/environment';
 
-import { InfoService } from './info.service';
+import { InfoService } from '../data/info.service';
 
 @Component({
   selector: 'app-reliability',

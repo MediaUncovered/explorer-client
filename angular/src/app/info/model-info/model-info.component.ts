@@ -1,10 +1,10 @@
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 import { Component, OnInit } from '@angular/core';
-import { ModelInfo } from './model-info.interface';
-import { environment } from '../../environments/environment';
+import { ModelInfo } from '../data/model-info.interface';
+import { environment } from '../../../environments/environment';
 
-import { InfoService } from './info.service';
+import { InfoService } from '../data/info.service';
 
 @Component({
   selector: 'app-model-info',

@@ -2,7 +2,7 @@ import { TestBed, async, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { CollectionInfoComponent } from './collection-info.component';
-import { InfoService } from './info.service';
+import { InfoService } from '../data/info.service';
 
 describe('Component: Collection Info', () => {
 
@@ -10,11 +10,11 @@ describe('Component: Collection Info', () => {
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			declarations: [InfoComponent],
+			declarations: [CollectionInfoComponent],
 			imports: [HttpClientTestingModule],
 			providers: [InfoService],
 		}).compileComponents();
-		const fixture = TestBed.createComponent(InfoComponent);
+		const fixture = TestBed.createComponent(CollectionInfoComponent);
 		infoComponent = fixture.componentInstance;
 	});
 

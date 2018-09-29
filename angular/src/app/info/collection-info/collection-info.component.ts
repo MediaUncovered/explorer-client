@@ -1,10 +1,10 @@
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 import { Component, OnInit } from '@angular/core';
-import { CollectionInfo } from './collection-info.interface';
-import { environment } from '../../environments/environment';
+import { CollectionInfo } from '../data/collection-info.interface';
+import { environment } from '../../../environments/environment';
 
-import { InfoService } from './info.service';
+import { InfoService } from '../data/info.service';
 
 @Component({
   selector: 'app-collection-info',

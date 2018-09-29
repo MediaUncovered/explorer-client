@@ -11,7 +11,7 @@ import { KeywordMappingService } from './keyword-mapping.service';
 
 export class KeywordMappingComponent implements OnInit {
 
-  userInput: UserInput = new UserInput();
+	userInput: UserInput = new UserInput('', '', '');
   keywordMapping: KeywordMapping = new KeywordMapping();
   errorMessage: string = 'WARNING: at least one of your input words is not included in the model.';
   showError = false;
@@ -31,29 +31,25 @@ export class KeywordMappingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userInput.keywordString = '';
-    this.userInput.leftString = '';
-    this.userInput.rightString = '';
-    this.barChartLabels.length = 1;
+		this.barChartLabels.length = 1;
   }
 
-    stringToArray(input){
-        var words = input.split(',');
-        return words.map(x => x.trim())
-    }
+  stringToArray(input){
+    var words = input.split(',');
+    return words.map(x => x.trim())
+  }
 
-    transformInput(){
-        this.keywordMapping.keywords = this.stringToArray(this.userInput.keywordString);
-        this.keywordMapping.left = this.stringToArray(this.userInput.leftString);
-        this.keywordMapping.right = this.stringToArray(this.userInput.rightString);
-    }
-
+  transformInput(){
+    this.keywordMapping.keywords = this.stringToArray(this.userInput.keywordString);
+    this.keywordMapping.left = this.stringToArray(this.userInput.leftString);
+    this.keywordMapping.right = this.stringToArray(this.userInput.rightString);
+  }
 
   onGetMapping() {
     this.transformInput();
   	this.mappingService.getKeywordMapping(this.keywordMapping)
   		.subscribe(
-  			(data: any) => {
+				(data: any) => {
           this.barChartLabels = this.keywordMapping.keywords;
           this.barChartData = [{data: data.mapping, label: ""}];
           this.showError = false;

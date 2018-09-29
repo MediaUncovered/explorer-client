@@ -1,0 +1,41 @@
+<h3>What is Media Uncovered?</h3>
+<p>
+Media Uncovered is a free open-source tool to investigate hidden biases in media.
+</p>
+<p>
+Every day newspapers and media platforms publish dozens of articles to inform us on the world affairs. With the language they use they have a powerful tool to draw the attention of readers to a specific topic, to trigger emotions and to shape the public opinion. Do we talk about humans fleeing their country due to war or an invasion of migrants stealing our jobs and housing?
+</p>
+<p>
+The way we talk about people in turn influences the way we deal with them. Of course this also influences our opinion on political and societal topics, as well as international conflicts. As newspapers have such an important role in this, we want to provide a tool to have a closer look at their usage of language.
+</p>
+
+<h3>Who is it for?</h3>
+<p>
+Journalists, Media activists and interested readers
+</p>
+
+<h3>How to use it?</h3>
+<ul>
+<li>Explore </li>
+<li>Detect</li>
+<li>Compare</li>
+</ul>
+<h3>Detect Bias</h3>
+<p>
+To detect bias in a model, the distance of keywords regarding a baseline axis is determined. The baseline axis contain words that cover both ends of the spectrum you are interested in.
+</p>
+<p>
+For example:
+</p>
+<ul>
+<li>a <i>gender axis</i> consists of male and female terms such as man, boy, he, him and woman, girl, she, her.</li>
+<li>a <i>sentiment axis</i> contains positive (pleasant, good, nice) and negative words (unpleasant, bad, ugly)</li>
+</ul>
+
+<p>
+The next step is to determine keywords that are mapped on this axis.
+For example, to examine the relationship between professions and gender we determine the distance of certain job descriptions (e.g. doctor, programmer, nurse, dancer, ...) to each end of the baseline axis.
+</p>
+<p>
+More precisely, for each keyword the mean cosine similarity between all <i>female</i> terms and the mean cosine similarity between all <i>male</i> terms is computed and displayed in a scatter plot.
+</p>

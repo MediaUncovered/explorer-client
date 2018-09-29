@@ -1,24 +1,28 @@
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 import { Component, OnInit } from '@angular/core';
-import { CollectionInfo } from './info.interface';
+import { CollectionInfo } from './collection-info.interface';
 import { environment } from '../../environments/environment';
 
 import { InfoService } from './info.service';
 
 @Component({
-  selector: 'app-info',
-  templateUrl: './info.component.html',
-  styleUrls: ['./info.component.css']
+  selector: 'app-collection-info',
+  templateUrl: './collection-info.component.html',
+  styleUrls: ['./collection-info.component.css']
 })
 
-export class InfoComponent implements OnInit{
+export class CollectionInfoComponent implements OnInit{
 
 	collectionInfo: CollectionInfo;
 
 	constructor(private infoService: InfoService) {}
 	
 	ngOnInit() {
+		this.getCollectionInfo();
+	}
+
+	getCollectionInfo() {
 		this.infoService.getCollectionInfo()
 		.subscribe(
 			(data: CollectionInfo) => this.collectionInfo = {...data},

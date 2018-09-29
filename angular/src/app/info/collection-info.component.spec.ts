@@ -1,12 +1,12 @@
 import { TestBed, async, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import { InfoComponent } from './info.component';
+import { CollectionInfoComponent } from './collection-info.component';
 import { InfoService } from './info.service';
 
-describe('Component: Info', () => {
+describe('Component: Collection Info', () => {
 
-	let infoComponent: InfoComponent;
+	let infoComponent: CollectionInfoComponent;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({

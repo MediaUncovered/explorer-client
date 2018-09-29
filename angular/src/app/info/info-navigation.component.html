@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<ul class="nav nav-tabs">
+			<li class="nav-item"
+			 		routerLinkActive="active"
+					[routerLinkActiveOptions]="{exact: true}">
+    		<a class="nav-link"
+					 [routerLink]="[{ outlets: {info: ['collection'] } }]">Collection Info</a>
+    	</li>
+			<li class="nav-item"
+			 		routerLinkActive="active">
+			 	<a class="nav-link"	
+			 		 [routerLink]="[{ outlets: {info: ['model']}}]">Model Info</a>
+			</li>
+			<li class="nav-item"
+			 		routerLinkActive="active"
+					[routerLinkActiveOptions]="{exact: true}">
+			 	<a class="nav-link"	
+			 		 [routerLink]="[{ outlets: {info: ['reliability']}}]">Reliability</a>
+			</li>
+		</ul>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+			<br>
+			<router-outlet name="info"></router-outlet>
+		</div>
+	</div>
+</div>

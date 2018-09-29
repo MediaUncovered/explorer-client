@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModelInfo } from './model-info.interface';
 import { environment } from '../../environments/environment';
 
-import { ModelInfoService } from './model-info.service';
+import { InfoService } from './info.service';
 
 @Component({
   selector: 'app-model-info',
@@ -15,15 +15,21 @@ import { ModelInfoService } from './model-info.service';
 export class ModelInfoComponent implements OnInit{
 
 	modelInfo: ModelInfo;
+	hasInfo: boolean = false;
 
-	constructor(private service: ModelInfoService) {}
+	constructor(private service: InfoService) {}
 	
-    ngOnInit() {
+  ngOnInit() {
+		this.getModelInfo()
+	}
+
+	getModelInfo(){
 		this.service.getModelInfo()
 		.subscribe(
 			  (data: ModelInfo) => this.modelInfo = {...data},
         (error) => console.log(error)
 		)
+		this.hasInfo = true;
 	}
 
 }

@@ -1,5 +1,5 @@
 export interface Reliability{
 	section: string;
-	n_total: number;
-	n_correct: number;
+	nr_total: number;
+	nr_correct: number;
 }

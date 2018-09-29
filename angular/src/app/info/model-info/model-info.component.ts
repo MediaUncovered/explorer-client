@@ -14,7 +14,7 @@ import { InfoService } from '../data/info.service';
 
 export class ModelInfoComponent implements OnInit{
 
-	modelInfo: ModelInfo;
+	modelInfo: ModelInfo = {type: '', method: '', min_freq: 0, context_window: 0, epochs: 0};
 	hasInfo: boolean = false;
 
 	constructor(private service: InfoService) {}

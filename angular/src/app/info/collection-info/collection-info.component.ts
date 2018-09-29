@@ -14,7 +14,7 @@ import { InfoService } from '../data/info.service';
 
 export class CollectionInfoComponent implements OnInit{
 
-	collectionInfo: CollectionInfo;
+	collectionInfo: CollectionInfo = {newspaper:'', nr_articles:0, earliest_publication_date:'', latest_publication_date:''};
 
 	constructor(private infoService: InfoService) {}
 	

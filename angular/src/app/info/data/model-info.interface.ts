@@ -3,5 +3,5 @@ export interface ModelInfo{
 	method: string;
 	min_freq: number;
 	context_window: number;
-	epochs: 5;
+	epochs: number;
 }

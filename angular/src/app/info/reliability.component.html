@@ -1,0 +1,25 @@
+<button class="btn btn-primary" (click)="getReliabilities()">
+	Reliability
+</button>
+<button class="btn btn-primary" (click)="getFakeReliabilities()">
+	Fake Reliability
+</button>
+<p>accuracies: {{accuracies}} {{accuracies.length}}</p>
+<table class="table" *ngIf="accuracies.length>0">
+    <thead>
+        <tr>
+            <th scope="col">Section</th>
+            <th scope="col">Percentage</th>
+            <th scope="col">Total Numbers</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let accuracy of accuracies">
+        <!-- <td>{{accuray.section}}</td> -->
+        <td>{{accuray}}</td>
+				<td>test</td>
+				<!-- <td>{{accuary.n_correct/accuracy.n_total}}</td> -->
+				<td>{{accuracy.n_total}}</td>
+			</tr>
+    </tbody>
+</table>

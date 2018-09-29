@@ -13,14 +13,15 @@ import { AnalogyService } from './data/analogy.service';
 import { InfoService } from './info/data/info.service';
 
 import { AppComponent } from './app.component';
-import { HomeComponent} from './home/home.component';
+import { HomeComponent} from './pages/home/home.component';
+import { ManualComponent } from './pages/manual/manual.component';
+import { AboutComponent } from './pages/about/about.component';
+
 import { InfoNavigationComponent } from './info/info-navigation.component';
 import { CollectionInfoComponent } from './info/collection-info/collection-info.component';
 import { ModelInfoComponent } from './info/model-info/model-info.component';
 import { ReliabilityComponent } from './info/reliability/reliability.component';
 import { ExploreComponent } from './explore/explore.component';
-import { ManualComponent } from './manual/manual.component';
-import { AboutComponent } from './about/about.component';
 import { KeywordMappingComponent } from './keyword-mapping/keyword-mapping.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { WordcloudComponent } from './wordcloud/wordcloud.component';

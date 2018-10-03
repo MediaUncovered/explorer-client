@@ -12,19 +12,15 @@ export class AnalogiesComponent implements OnInit {
 
   constructor(private analogyService: AnalogyService) { }
 
-  input: WordPair = new WordPair();
-  analogies: Analogy[];
+  input: WordPair = {'a':'', 'b':''};
+  analogies: Analogy[] = [];
   hasError = false;
-  errorMessage: string = 'WARNING: at least one of your input words is not included in the model.';
+  errorMessage: string = 'INFO: No analogies found.';
 
   ngOnInit() {
-  	this.input.a = 'a';
-  	this.input.b = 'b';
-    this.analogies = [ new Analogy('x', 'y', 0.39)];
   }
 
   generateAnalogies(){
-    console.log(this.analogies.length);
     this.analogyService.getAnalogies(this.input)
     .subscribe(
       (data: any) => {

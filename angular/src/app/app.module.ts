@@ -11,6 +11,7 @@ import { CorrelationService } from './data/correlation.service';
 import { KeywordMappingService } from './keyword-mapping/keyword-mapping.service';
 import { AnalogyService } from './data/analogy.service';
 import { InfoService } from './info/data/info.service';
+import { ModelSelectionService } from './model-selection/model-selection.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent} from './pages/home/home.component';
@@ -75,6 +76,7 @@ const appRoutes: Routes = [
     KeywordMappingService,
 		AnalogyService,
 		InfoService,
+		ModelSelectionService,
 	],
   bootstrap: [AppComponent]
 })

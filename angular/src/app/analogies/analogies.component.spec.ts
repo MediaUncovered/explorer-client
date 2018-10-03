@@ -11,7 +11,7 @@ import { Analogy } from '../data/analogy.interface';
 describe('AnalogiesComponent', () => {
 
   const mockEmptyAnalogies = [];
-  const mockTwoAnalogies = [new Analogy('x1','y1',0.82), new Analogy('x2','y2',0.34)];
+  const mockTwoAnalogies = [{'x':'x1','y':'y1','score':0.82}, {'x':'x2','y':'y2','score':0.34}];
 
   let component: AnalogiesComponent;
   let service: AnalogyService;
@@ -26,21 +26,21 @@ describe('AnalogiesComponent', () => {
       ],
       providers: [
         AnalogyService,
-      ]  
-    });
+      ]
+		});
     fixture = TestBed.createComponent(AnalogiesComponent);
     component = fixture.debugElement.componentInstance;
     service = TestBed.get(AnalogyService);
     fixture.detectChanges();
   });
-  
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have more analogies with at least one element', () =>{
-    expect(component.analogies.length).toBeGreaterThan(0);
+  it('should have an empty array of analogies', () =>{
+    expect(component.analogies).toEqual([]);
+    expect(component.analogies.length).toEqual(0);
   });
 
   it('should have two analogies', () =>{

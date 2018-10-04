@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
-// import { NgbPopover } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChartsModule } from 'ng4-charts/ng4-charts';
 import { TagCloudModule } from 'angular-tag-cloud-module';
@@ -31,7 +30,6 @@ import { WordcloudComponent } from './wordcloud/wordcloud.component';
 import { AnalogiesComponent } from './analogies/analogies.component';
 import { ModelSelectionComponent } from './model-selection/model-selection.component';
 import { DropdownDirective } from './shared/dropdown.directive';
-import { PopoverComponent } from './shared/popover.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -65,7 +63,6 @@ const appRoutes: Routes = [
     DropdownDirective,
     ReliabilityComponent,
 		InfoNavigationComponent,
-		PopoverComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +72,6 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     TagCloudModule,
 		NgbModule.forRoot(),
-		// NgbPopover,
   ],
   providers: [
     CorrelationService,

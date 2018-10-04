@@ -1,6 +1,7 @@
 <h3> Newspaper Models </h3>
 <div>
-	<div> Select a pre-trained word embedding model based on articles of different newspaper. Further information on the collection, the model paramters and its reliability are provided below. </div>
+	<div> Select a pre-trained word embedding model based on different newspapers. <br>
+		Information on the collection, the model paramters and its reliability are provided below. </div>
 	<select class="mdb-select md-form" multiple searchable="Search here..">
 	<option value="" disabled selected text-align="center"> Choose Model</option>
 	<option *ngFor="let mod of models" [value]="mod" (click)="setModel(mod)">{{mod}}</option>

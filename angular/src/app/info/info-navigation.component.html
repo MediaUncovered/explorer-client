@@ -7,17 +7,41 @@
     		<a class="nav-link"
 					 [routerLink]="[{ outlets: {info: ['collection'] } }]">Collection Info</a>
     	</li>
+			<button type="button"
+										class="btn btn-outline-primary btn-circle"
+										placement="right-bottom"
+										ngbPopover=""
+										popoverTitle="Analogy Generation"
+										popover-class="increase-popover-width">
+				?
+			</button>
 			<li class="nav-item"
 			 		routerLinkActive="active">
 			 	<a class="nav-link"	
 			 		 [routerLink]="[{ outlets: {info: ['model']}}]">Model Info</a>
 			</li>
+			<button type="button"
+										class="btn btn-outline-primary btn-circle"
+										placement="right-bottom"
+										ngbPopover=""
+										popoverTitle="Analogy Generation"
+										popover-class="increase-popover-width">
+				?
+			</button>
 			<li class="nav-item"
 			 		routerLinkActive="active"
 					[routerLinkActiveOptions]="{exact: true}">
 			 	<a class="nav-link"	
 			 		 [routerLink]="[{ outlets: {info: ['reliability']}}]">Reliability</a>
 			</li>
+			<button type="button"
+										class="btn btn-outline-primary btn-circle"
+										placement="right-bottom"
+										ngbPopover=""
+										popoverTitle="Analogy Generation"
+										popover-class="increase-popover-width">
+				?
+			</button>
 		</ul>
 	</div>
 	<div class="row">

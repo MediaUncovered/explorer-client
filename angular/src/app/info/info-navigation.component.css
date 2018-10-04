@@ -11,3 +11,6 @@
 		margin-right: 10px;
 		padding: 0px 0;
 }
+:host >>> .popover {
+		max-width:100%;
+}

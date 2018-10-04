@@ -1,11 +1,12 @@
-<h3> Detect Bias 
+<ng-template #explainer> Bias describes a consistent tendency of associating certain words and concepts. For example, we tend to associate <i>doctor</i> or <i>director </i> with <i>men </i> while <i>secretary</i> or <i>nurse</i> seem to be profession associated with <i>women</i>. <br>
+	With a word embedding we can detect such bias by checking whether keywords, e.g. professions, are closer related to one side of the spectrum or another. The spectrum is spanned as a vector which is defined by words on its extreme sides (<i>man, male, he</i> vs. <i>woman, female, she</i>).</ng-template>
+<h3> Detect Bias
 	<button type="button"
-					class="btn btn-outline-primary btn-circle"
-					placement="right-bottom"
-								ngbPopover="Bias describes a consistent tendency of associating certain words and concepts. For example, we tend to associate doctor or director with men while secretary or nurse seem to be profession associated with women. 
-		With a word embedding we can detect such bias by checking whether keywords, e.g. professions, are closer related to one side of the spectrum or another. The spectrum is spanned as a vector which is defined by words on its extreme sides (man, male, he vx. woman, female, she)."
-					popoverTitle="Keyword Mapping"
-					popover-class="increase-popover-width">
+								class="btn btn-outline-primary btn-circle"
+								placement="right-bottom"
+								[ngbPopover]="explainer"
+								popoverTitle="Keyword Mapping"
+								container="body">
 		?
 	</button>
 </h3>

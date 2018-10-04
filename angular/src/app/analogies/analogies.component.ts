@@ -25,9 +25,11 @@ export class AnalogiesComponent implements OnInit {
     .subscribe(
       (data: any) => {
         this.analogies = data;
+				this.hasError = false;
       },
       error => {
         console.log('ERROR: ', error);
+				this.analogies = [];
         this.hasError = true;
       }
     )

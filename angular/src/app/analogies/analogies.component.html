@@ -19,10 +19,7 @@
 	 <button class="btn btn-primary" (click)="generateAnalogies()">Generate Analogies</button>
 </div>
 <div>
-<p *ngIf="analogies.length==0" color="red"> No analogies were found. </p>
-</div>
-<div>
-<p *ngIf="hasError" color="red"> {{errorMessage}}</p>
+<p *ngIf="hasError"> {{errorMessage}}</p>
 </div>
 <table class="table">
   <thead>

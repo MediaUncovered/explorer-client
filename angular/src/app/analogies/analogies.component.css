@@ -6,7 +6,8 @@ button {
 	margin-left:10px;
 }
 p {
-	margin-top:10px;
+		margin-top:5px;
+		color: red;
 }
 input{
 	width:150px;

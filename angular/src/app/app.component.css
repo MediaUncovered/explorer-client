@@ -1,5 +1,24 @@
-h1{
-	color: black;
-	margin-top: 60px;
-	margin-bottom: 40px;
+.header-img {
+		/* background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../assets/typewriter.jpg"); */
+		background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../assets/newspaper.jpg");
+		height: 50%;
+		background-position: top;
+		background-size: cover;
+		position: relative;
+		margin-bottom: 40px;
+}
+.header-text {
+		text-align: center;
+		height: 310px;
+		position: relative;
+}
+h1 {
+		line-height: 200px;
+		margin-bottom: 0px;
+		font-weight: bold;
+		font-size: 38px;
+}
+p {
+		line-height: 10px;
+		font-size: 25px;
 }

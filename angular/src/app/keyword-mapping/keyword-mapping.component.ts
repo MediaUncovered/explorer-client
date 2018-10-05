@@ -70,16 +70,26 @@ export class KeywordMappingComponent implements OnInit {
   }
 
   onGetGenderMapping(){
-    this.userInput.keywordString = 'professor, programmer, secretary, doctor, artist, nurse';
-    this.userInput.leftString = 'woman, female';
-    this.userInput.rightString = 'man, male';
+    this.userInput.keywordString = 'secretary, professor, politician, nurse, pilot, teacher, finance, technology, family, business';
+    // this.userInput.leftString = 'woman, female, she';
+    this.userInput.leftString = 'she, woman';
+    // this.userInput.rightString = 'man, male, he';
+    this.userInput.rightString = 'he, man';
     this.onGetMapping()
   }
 
-  onGetColorMapping(){
-    this.userInput.keywordString = 'red, green, blue, yellow, black, white';
-    this.userInput.leftString = 'positive';
-    this.userInput.rightString = 'negative';
+  onGetPoliticsMapping(){
+    this.userInput.keywordString = 'health, social, education, immigration, gender, gun';
+    this.userInput.leftString = 'democrats';
+    this.userInput.rightString = 'conservative';
+    this.onGetMapping()
+  }
+
+
+  onGetPreferencesMapping(){
+    this.userInput.keywordString = 'wealth, war, repression, freedom, immigration, economy, peace, justice, equality';
+    this.userInput.leftString = 'good, positive';
+    this.userInput.rightString = 'bad, negative';
     this.onGetMapping()
   }
 

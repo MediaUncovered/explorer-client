@@ -27,7 +27,7 @@ Be sure to separate the words by comma.
 			</button>
 		</div>
 		<div>
-			<label>Left Axis:</label>
+			<label>Right Axis:</label>
 			<input type="text"
 			name="left-axis"
 			[(ngModel)]= "userInput.leftString"><br />
@@ -38,7 +38,7 @@ Be sure to separate the words by comma.
 			</button>
 		</div>
 		<div>
-			<label>Right Axis:</label>
+			<label>Left Axis:</label>
 			<input type="text"
 			name="right"
 			[(ngModel)]= "userInput.rightString"><br />
@@ -50,11 +50,14 @@ Be sure to separate the words by comma.
 		Example mappings:
 	</div>
 	<div>
-	<button class="btn btn-secondary" style="margin-left: 100px; " (click)="onGetGenderMapping()">
+	<button class="btn btn-secondary" style="margin-left: 100px;" (click)="onGetGenderMapping()">
 		Gender Mapping
 	</button>
-	<button class="btn btn-secondary"(click)="onGetColorMapping()">
-		Color Mapping
+	<button class="btn btn-secondary" (click)="onGetPoliticsMapping()">
+		Politics Mapping
+	</button>
+	<button class="btn btn-secondary" (click)="onGetPreferencesMapping()">
+		Preferences Mapping
 	</button>
 	</div>
 </div>

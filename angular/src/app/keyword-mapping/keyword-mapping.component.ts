@@ -71,9 +71,7 @@ export class KeywordMappingComponent implements OnInit {
 
   onGetGenderMapping(){
     this.userInput.keywordString = 'secretary, professor, politician, nurse, pilot, teacher, finance, technology, family, business';
-    // this.userInput.leftString = 'woman, female, she';
     this.userInput.leftString = 'she, woman';
-    // this.userInput.rightString = 'man, male, he';
     this.userInput.rightString = 'he, man';
     this.onGetMapping()
   }
@@ -90,6 +88,35 @@ export class KeywordMappingComponent implements OnInit {
     this.userInput.keywordString = 'wealth, war, repression, freedom, immigration, economy, peace, justice, equality';
     this.userInput.leftString = 'good, positive';
     this.userInput.rightString = 'bad, negative';
+    this.onGetMapping()
+  }
+
+  onGetGeschlechterMapping(){
+    this.userInput.keywordString = 'kunst, kultur,  sozialwissenschaft, technik, logik, professor, doktor, arbeit, hausarbeit, famili, sensibel, aggressiv, fussball, volleyball';
+    this.userInput.leftString = 'frau, weiblich';
+    this.userInput.rightString = 'mann, mannlich';
+    this.onGetMapping()
+  }
+
+
+  onGetPolitikerMapping(){
+    this.userInput.keywordString = 'gysi, wagenknecht, kipping, baerbock, esk, nahl, merkel, spahn, seehof, lindn, weidel, hock, gauland';
+    this.userInput.rightString = 'link, linksextrem, linksradikal';
+    this.userInput.leftString = 'recht, rechtsextrem, rechtsradikal';
+    this.onGetMapping()
+  }
+
+  onGetThemenMapping(){
+    this.userInput.keywordString = 'sozial, gerecht, kinderarmut, rent, famili, gesundheit, kultur, bildung,  forschung, digital, kohlekraft, umweltschutz, klima, wirtschaft, lobbyregist, finanz, heimat, europa, immigration, religion, angst, freiheit, solidaritat, offen, sicher';
+    this.userInput.rightString = 'link, linksextrem, linksradikal';
+    this.userInput.leftString = 'recht, rechtsextrem, rechtsradikal';
+    this.onGetMapping()
+  }
+
+  onGetWerteMapping(){
+    this.userInput.keywordString = 'repression, nationalismus, islamismus, terrorismus, krieg, korruption, gewalt, freiheit, gleichheit, famili, wirtschaft, kultur, fried, europa';
+    this.userInput.rightString = 'gut, positiv';
+    this.userInput.leftString = 'schlecht, negativ';
     this.onGetMapping()
   }
 

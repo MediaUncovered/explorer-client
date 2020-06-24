@@ -52,7 +52,13 @@ export class KeywordMappingComponent implements OnInit {
 				(data: any) => {
           this.barChartLabels = data.keywords;
           this.barChartData = [{data: data.mapping, label: ""}];
+          if (data.oov && data.oov.length > 0){
+            this.errorMessage= 'WARNING: The following words are not in the model: ' + data.oov.toString();
+            this.showError = true;
+          }
+          else{
           this.showError = false;
+          }
         },
         error => {
           console.log('Mapping Service ERROR:', error);

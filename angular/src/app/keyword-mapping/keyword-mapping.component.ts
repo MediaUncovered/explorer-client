@@ -50,7 +50,7 @@ export class KeywordMappingComponent implements OnInit {
   	this.mappingService.getKeywordMapping(this.keywordMapping)
   		.subscribe(
 				(data: any) => {
-          this.barChartLabels = this.keywordMapping.keywords;
+          this.barChartLabels = data.keywords;
           this.barChartData = [{data: data.mapping, label: ""}];
           this.showError = false;
         },

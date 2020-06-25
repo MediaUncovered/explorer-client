@@ -13,7 +13,7 @@ export class KeywordMappingComponent implements OnInit {
 
 	userInput: UserInput = new UserInput('', '', '');
   keywordMapping: KeywordMapping = new KeywordMapping();
-  errorMessage: string = 'WARNING: at least one of your input words is not included in the model.';
+  errorMessage: string = 'Error: Something went wrong... Check if a model was loaded';
   showError = false;
 
   public barChartType: string = 'horizontalBar';
@@ -57,11 +57,12 @@ export class KeywordMappingComponent implements OnInit {
             this.showError = true;
           }
           else{
-          this.showError = false;
+            this.showError = false;
           }
         },
         error => {
           console.log('Mapping Service ERROR:', error);
+          this.errorMessage = 'Error: Something went wrong... Check if a model was loaded';
           this.showError = true;
         },
   		);

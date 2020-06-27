@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChartsModule } from 'ng4-charts/ng4-charts';
 import { TagCloudModule } from 'angular-tag-cloud-module';
 
@@ -11,6 +12,7 @@ import { CorrelationService } from './data/correlation.service';
 import { KeywordMappingService } from './keyword-mapping/keyword-mapping.service';
 import { AnalogyService } from './data/analogy.service';
 import { InfoService } from './info/data/info.service';
+import { ModelSelectionService } from './model-selection/model-selection.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent} from './pages/home/home.component';
@@ -68,13 +70,15 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    TagCloudModule
+    TagCloudModule,
+		NgbModule.forRoot(),
   ],
   providers: [
     CorrelationService,
     KeywordMappingService,
 		AnalogyService,
 		InfoService,
+		ModelSelectionService,
 	],
   bootstrap: [AppComponent]
 })

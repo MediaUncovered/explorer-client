@@ -1,3 +1,10 @@
+<ng-template #collection_explainer>The collection information shows on which data the newspaper model was trained. <br>
+	To compare the language of newspapers it is important to cover a similar amount of articles from a comparable time frame.
+	The higher the number of articles  used for training, the more reliable is the model.</ng-template>
+<ng-template #model_explainer>In a word embedding model words are represented as vectors. This representation is learned by looking at the context of words in a large collections of documents. <br> Different methods and their parameters lead to different embedding models. For comparability purposes, these parameters are published here. For more information on how a model is trained, have a look here.</ng-template>
+<ng-template #reliability_explainer>To get a feeling on how well a model captures semantic and grammatical relationships between words, an analogy task developed by Google is applied. It contains about 20000 analogies such as <i>Paris</i> is to <i>France</i> as <i>Berlin</i> is to <i>Germany</i>. The task for the model is to correctly identify the last word in the analogy. <br>
+	The analogy test dataset contains 14 different semantic and morphological categories. <br>
+	As a reference, a model trained on a 6B Google News corpus (window 10) reaches an accuracy of 24% in semantic and 64% in syntactic tasks.</ng-template>
 <div class="container">
 	<div class="row">
 		<ul class="nav nav-tabs">
@@ -7,17 +14,40 @@
     		<a class="nav-link"
 					 [routerLink]="[{ outlets: {info: ['collection'] } }]">Collection Info</a>
     	</li>
+			<button type="button"
+										class="btn btn-outline-primary btn-circle"
+										placement="right-bottom"
+										[ngbPopover]="collection_explainer"
+										popoverTitle="Collection Information"
+										popover-class="increase-popover-width">
+				?
+			</button>
 			<li class="nav-item"
 			 		routerLinkActive="active">
 			 	<a class="nav-link"	
 			 		 [routerLink]="[{ outlets: {info: ['model']}}]">Model Info</a>
 			</li>
+			<button type="button"
+										class="btn btn-outline-primary btn-circle"
+										placement="right-bottom"
+										[ngbPopover]="model_explainer"
+										popoverTitle="Model Information"
+										>
+				?
+			</button>
 			<li class="nav-item"
 			 		routerLinkActive="active"
 					[routerLinkActiveOptions]="{exact: true}">
 			 	<a class="nav-link"	
 			 		 [routerLink]="[{ outlets: {info: ['reliability']}}]">Reliability</a>
 			</li>
+			<button type="button"
+										class="btn btn-outline-primary btn-circle"
+										placement="right-bottom"
+										[ngbPopover]="reliability_explainer"
+										popoverTitle="Analogy Test">
+				?
+			</button>
 		</ul>
 	</div>
 	<div class="row">

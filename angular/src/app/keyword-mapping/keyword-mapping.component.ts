@@ -13,7 +13,7 @@ export class KeywordMappingComponent implements OnInit {
 
 	userInput: UserInput = new UserInput('', '', '');
   keywordMapping: KeywordMapping = new KeywordMapping();
-  errorMessage: string = 'WARNING: at least one of your input words is not included in the model.';
+  errorMessage: string = 'Error: Something went wrong... Check if a model was loaded';
   showError = false;
 
   public barChartType: string = 'horizontalBar';
@@ -50,12 +50,19 @@ export class KeywordMappingComponent implements OnInit {
   	this.mappingService.getKeywordMapping(this.keywordMapping)
   		.subscribe(
 				(data: any) => {
-          this.barChartLabels = this.keywordMapping.keywords;
+          this.barChartLabels = data.keywords;
           this.barChartData = [{data: data.mapping, label: ""}];
-          this.showError = false;
+          if (data.oov && data.oov.length > 0){
+            this.errorMessage= 'WARNING: The following words are not in the model: ' + data.oov.toString();
+            this.showError = true;
+          }
+          else{
+            this.showError = false;
+          }
         },
         error => {
           console.log('Mapping Service ERROR:', error);
+          this.errorMessage = 'Error: Something went wrong... Check if a model was loaded';
           this.showError = true;
         },
   		);
@@ -70,16 +77,53 @@ export class KeywordMappingComponent implements OnInit {
   }
 
   onGetGenderMapping(){
-    this.userInput.keywordString = 'professor, programmer, secretary, doctor, artist, nurse';
-    this.userInput.leftString = 'woman, female';
-    this.userInput.rightString = 'man, male';
+    this.userInput.keywordString = 'secretary, professor, politician, nurse, pilot, teacher, finance, technology, family, business';
+    this.userInput.leftString = 'she, woman';
+    this.userInput.rightString = 'he, man';
     this.onGetMapping()
   }
 
-  onGetColorMapping(){
-    this.userInput.keywordString = 'red, green, blue, yellow, black, white';
-    this.userInput.leftString = 'positive';
-    this.userInput.rightString = 'negative';
+  onGetPoliticsMapping(){
+    this.userInput.keywordString = 'health, social, education, immigration, gender, gun';
+    this.userInput.leftString = 'democrats';
+    this.userInput.rightString = 'conservative';
+    this.onGetMapping()
+  }
+
+
+  onGetPreferencesMapping(){
+    this.userInput.keywordString = 'wealth, war, repression, freedom, immigration, economy, peace, justice, equality';
+    this.userInput.leftString = 'good, positive';
+    this.userInput.rightString = 'bad, negative';
+    this.onGetMapping()
+  }
+
+  onGetGeschlechterMapping(){
+    this.userInput.keywordString = 'kunst, kultur,  sozialwissenschaft, technik, logik, professor, doktor, arbeit, hausarbeit, famili, sensibel, aggressiv, fussball, volleyball';
+    this.userInput.leftString = 'frau, weiblich';
+    this.userInput.rightString = 'mann, mannlich';
+    this.onGetMapping()
+  }
+
+
+  onGetPolitikerMapping(){
+    this.userInput.keywordString = 'gysi, wagenknecht, kipping, baerbock, esk, nahl, merkel, spahn, seehof, lindn, weidel, hock, gauland';
+    this.userInput.rightString = 'link, linksextrem, linksradikal';
+    this.userInput.leftString = 'recht, rechtsextrem, rechtsradikal';
+    this.onGetMapping()
+  }
+
+  onGetThemenMapping(){
+    this.userInput.keywordString = 'sozial, gerecht, kinderarmut, rent, famili, gesundheit, kultur, bildung,  forschung, digital, kohlekraft, umweltschutz, klima, wirtschaft, lobbyregist, finanz, heimat, europa, immigration, religion, angst, freiheit, solidaritat, offen, sicher';
+    this.userInput.rightString = 'link, linksextrem, linksradikal';
+    this.userInput.leftString = 'recht, rechtsextrem, rechtsradikal';
+    this.onGetMapping()
+  }
+
+  onGetWerteMapping(){
+    this.userInput.keywordString = 'repression, nationalismus, islamismus, terrorismus, krieg, korruption, gewalt, freiheit, gleichheit, famili, wirtschaft, kultur, fried, europa';
+    this.userInput.rightString = 'gut, positiv';
+    this.userInput.leftString = 'schlecht, negativ';
     this.onGetMapping()
   }
 

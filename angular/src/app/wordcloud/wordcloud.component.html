@@ -1,6 +1,17 @@
-<h3> Explore Language Usage </h3>
+<ng-template #explainer> The cloud displays the words which are closest to the searched term. The larger a word the stronger is its relation. The relation of two words is determined by the cosine similarity of their vectors. <br>
+	If two vectors point into the same direction (are parallel) they have a cosine similarity of 1. The cosine similarity of orthogonal vectors is 0.</ng-template>
+<h3> Explore Language Usage
+	<button type="button"
+								class="btn btn-outline-primary btn-circle"
+								placement="right-bottom"
+								[ngbPopover]="explainer"
+								popoverTitle="Similar Words"
+								container="body">
+		?
+	</button>
+</h3>
 <div>
-	Type in a word to see closely related terms.
+	Type in a word to get terms that are closely related within the selected newspaper.
 </div>
 <div>
   <input #wordinput />

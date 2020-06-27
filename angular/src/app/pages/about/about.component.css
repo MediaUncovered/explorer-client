@@ -1,0 +1,26 @@
+p {
+		margin-top: 30px;
+}
+.row {
+		display: flex;
+		flex-wrap: wrap;
+}
+.column {
+		felx: 33%;
+		padding: 0 4px 4px;
+}
+
+.column img {
+		margin-top: 10px;
+		width: 250px;
+}
+
+#ptf {
+		width:140px;
+		margin-right: 20px;
+}
+
+h6 {
+		margin-top: 180px;
+		font-weight: bold;
+}

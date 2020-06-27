@@ -1,6 +1,18 @@
-<h3> Detect Bias </h3>
+<ng-template #explainer> Bias describes a consistent tendency of associating certain words and concepts. For example, we tend to associate <i>doctor</i> or <i>director </i> with <i>men </i> while <i>secretary</i> or <i>nurse</i> seem to be profession associated with <i>women</i>. <br>
+	With a word embedding we can detect such bias by checking whether keywords, e.g. professions, are closer related to one side of the spectrum or another. The spectrum is spanned as a vector which is defined by words on its extreme sides (<i>man, male, he</i> vs. <i>woman, female, she</i>).</ng-template>
+<h3> Detect Bias
+	<button type="button"
+								class="btn btn-outline-primary btn-circle"
+								placement="right-bottom"
+								[ngbPopover]="explainer"
+								popoverTitle="Keyword Mapping"
+								container="body">
+		?
+	</button>
+</h3>
 <div>
-	To search for any possible tendency in a newspaper specify a words on the extremes (e.g. male, man vs. female, woman) and the keywords you want to test (e.g. professor, nurse).
+	To investigate a possible bias in a newspaper specify the keywords you are interested in (e.g. professions such as <i>director, nurse,... </i>. Furthermore, words that describe the extremes sides (left and right axis) of the expected bias are required (e.g. <i>male, man, he </i> vs. <i>female, woman, she</i>). <br> <br>
+Be sure to separate the words by comma.
 </div>
 <div class="grid-container">
 		<div>
@@ -38,12 +50,27 @@
 		Example mappings:
 	</div>
 	<div>
-	<button class="btn btn-secondary" style="margin-left: 100px; " (click)="onGetGenderMapping()">
+	<button class="btn btn-secondary" style="margin-left: 100px;" (click)="onGetGenderMapping()">
 		Gender Mapping
 	</button>
-	<button class="btn btn-secondary"(click)="onGetColorMapping()">
-		Color Mapping
+	<button class="btn btn-secondary" (click)="onGetPoliticsMapping()">
+		Politics Mapping
 	</button>
+	<button class="btn btn-secondary" (click)="onGetPreferencesMapping()">
+		Preferences Mapping
+	</button>
+    <button class="btn btn-secondary" (click)="onGetGeschlechterMapping()">
+      Geschlechter Mapping
+    </button>
+    <button class="btn btn-secondary" (click)="onGetPolitikerMapping()">
+      Politiker Mapping
+    </button>
+    <button class="btn btn-secondary" (click)="onGetThemenMapping()">
+      Themen Mapping
+    </button>
+    <button class="btn btn-secondary" (click)="onGetWerteMapping()">
+      Werte Mapping
+    </button>
 	</div>
 </div>
 <div style="display:block; width:125%" *ngIf="barChartLabels.length > 0">

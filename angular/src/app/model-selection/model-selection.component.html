@@ -1,13 +1,9 @@
-<h3> Select Newspaper </h3>
-<div class="btn-group" appDropdown>
-  <button
-    type="button"
-    class="btn btn-primary dropdown-toggle">
-    Model
-  </button>
-  <div class="dropdown-menu">
-    <button class="dropdown-item" type="button">Moscow Times </button>
-    <button class="dropdown-item" type="button">BBC</button>
-    <button class="dropdown-item" type="button">New York Times</button>
-  </div>
+<h3> Newspaper Models </h3>
+<div>
+	<div> Select a pre-trained word embedding model based on different newspapers. <br>
+		Information on the collection, the model paramters and its reliability are provided below. </div>
+	<select class="mdb-select md-form" multiple searchable="Search here..">
+	<option value="" disabled selected text-align="center"> Choose Model</option>
+	<option *ngFor="let mod of models" [value]="mod" (click)="setModel(mod)">{{mod}}</option>
+		</select>
 </div>

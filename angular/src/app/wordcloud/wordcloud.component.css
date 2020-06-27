@@ -8,3 +8,19 @@ p {
 	margin-top: 15px;
 	color: red;
 }
+.btn-circle {
+		width: 30px;
+		height: 30px;
+		vertical-align: text-bottom;
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		border-radius: 15px;
+		line-height: 1.428;
+		border-width: 1.5px;
+		margin-left: 25px;
+		padding: 3px 0;
+}
+:host >>> .popover {
+		max-width:100%;
+}

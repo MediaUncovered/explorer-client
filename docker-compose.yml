@@ -5,7 +5,10 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - ./models:/flask-explorer/models
+      - ../explorer-server/models:/flask-explorer/models
+    environment:
+        MODELS_PATH: './models'
+        FLASK_ENV: development
 
   client:
     image: mediauncovered/explorer-client:dev

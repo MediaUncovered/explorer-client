@@ -10,7 +10,8 @@ export class AnalogyService{
 	constructor(private http:HttpClient) { }
 
 	getAnalogies(wordpair: WordPair){
+		console.log('Generate Analogies in Analogy Service');
 		const url = environment.API_URL + 'analogies';
-		return this.http.post(url, wordpair)
+		return this.http.post(url, {'wordpair':wordpair});
 	}
 }
